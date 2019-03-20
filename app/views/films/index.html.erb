@@ -1,0 +1,24 @@
+<h1 align="center" class="display-2" align="center">Films </h1>
+
+<table class="table" data-sort-name="name" data-sort-order="desc"> 
+  <thead>
+    <tr>
+      <th scope="col">Title</th>
+      <th scope="col">Date</th>
+      <th scope="col">Director</th>
+      <th scope="col">Producers</th>
+      <th data-field="name" data-sortable="true" scope="col">Episode</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @films.each do |film|%> 
+    <tr>
+      <th scope="row "><%= link_to film['title'], film_path(:id => film['episode_id']) %></th>
+      <td><%= film['release_date'] %></td>
+      <td><%= film['director'] %></td>
+      <td><%= film['producer'] %></td>
+      <td><%= film['episode_id'] %></td>
+    </tr>
+  <% end %> 
+  </tbody>
+</table>

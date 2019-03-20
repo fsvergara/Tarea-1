@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Starwars</title>
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+
+    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+  </head>
+    
+<nav class="navbar navbar-dark bg-dark">
+  <button type="button" class="btn btn-default"><a class="navbar-brand" href="/">Home</a></button>
+
+  
+<form action="/search/" class="navbar-form" role="search">
+    <div class="form-group">
+        <input type="text" name="term" class="form-control" placeholder="Search">
+    </div>
+</form>
+
+</nav>
+
+  <body>
+    <%= yield %>
+  </body>
+
+</html>

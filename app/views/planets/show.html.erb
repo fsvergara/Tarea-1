@@ -1,0 +1,64 @@
+<h1 class="display-2" align="center"><%= @planet['name'] %></h1>
+
+<table class="table table-bordered">
+  <tr>
+    <th>Diameter</th>
+    <td><%= @planet['diameter'] %> </td>
+  </tr>
+    <tr>
+    <th>Rotatio Period</th>
+    <td><%= @planet['rotation_period'] %> </td>
+  </tr>
+    <tr>
+    <th>Orbital Period</th>
+    <td><%= @planet['orbital_period'] %> </td>
+  </tr>
+  <tr>
+    <th>Population</th>
+    <td><%= @planet['population'] %> </td>
+  </tr>
+    <tr>
+    <th>Climate</th>
+    <td><%= @planet['climate'] %> </td>
+  </tr>
+    <tr>
+    <th>Surface Water</th>
+    <td><%= @planet['surface_water'] %> </td>
+  </tr>
+      <tr>
+    <th>Appears on</th>
+    <td>
+          <table class="table table-sm">
+      <% @films.each do |film|%> 
+            <tr>
+            <td><%= link_to film['title'], film_path(:id => film['id']) %></td>
+            </tr>
+          <% end %> 
+          </table>
+    </td>
+  </tr>
+    <tr>
+    <th>Residents</th>
+    <td>
+          <table class="table table-sm">
+            <% @characters.each do |char|%> 
+            <tr>
+              <td><%= link_to char['name_char'], person_path(:id => char['id']) %></td>
+            </tr>
+          <% end %> 
+          </table>
+    </td>
+  </tr>
+    <tr>
+    <th>URL</th>
+    <td><%= @planet['url'] %> </td>
+  </tr>
+      <tr>
+    <th>Create</th>
+    <td><%= @planet['created'] %> </td>
+  </tr>
+        <tr>
+  <th>Edited</th>
+    <td><%= @planet['edited'] %> </td>
+  </tr>
+ </table>

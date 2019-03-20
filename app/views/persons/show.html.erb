@@ -1,0 +1,83 @@
+<h1 class="display-2" align="center"> <%= @person['name'] %></h1>
+
+<table class="table table-bordered">
+  <tr>
+    <th>Birth Year</th>
+    <td><%= @person['birth_year'] %> </td>
+  </tr>
+  <tr>
+    <th>Eye Color</th>
+    <td><%= @person['eye_color'] %> </td>
+  </tr>
+    <tr>
+    <th>Gender</th>
+    <td><%= @person['gender'] %> </td>
+  </tr>
+    <tr>
+    <th>Hair Color</th>
+    <td><%= @person['hair_color'] %> </td>
+  </tr>
+    <tr>
+    <th>Height</th>
+    <td><%= @person['height'] %> </td>
+  </tr>
+      <tr>
+    <th>Mass</th>
+    <td><%= @person['mass'] %> </td>
+  </tr>
+        <tr>
+    <th>Skin Color</th>
+    <td><%= @person['skin_color'] %> </td>
+  </tr>
+   </tr>
+    <tr>
+    <th>Appears on</th>
+    <td>
+          <table class="table table-sm">
+ 			<% @films.each do |film|%> 
+            <tr>
+        		<td><%= link_to film['title'], film_path(:id => film['id']) %></td>
+            </tr>
+	        <% end %> 
+          </table>
+    </td>
+  </tr>
+  <tr>
+    <th>Hometown</th>
+    <td>
+        <table class="table table-sm">
+            <% @planets.each do |plan|%> 
+            <tr>
+              <td><%= link_to plan['name_plan'], planet_path(:id => plan['id']) %></td>
+            </tr>
+	        <% end %> 
+          </table>
+    </td>
+  </tr>
+    </tr>
+    <tr>
+    <th>Starships</th>
+    <td>
+          <table class="table table-sm">
+ 			<% @starships.each do |star|%> 
+            <tr>
+        		<td><%= link_to star['name_star'], starship_path(:id => star['id']) %></td>
+            </tr>
+	        <% end %> 
+          </table>
+    </td>
+  </tr>
+  </tr>
+      <tr>
+    <th>URL</th>
+    <td><%= @person['url'] %> </td>
+  </tr>
+      <tr>
+    <th>Created</th>
+    <td><%= @person['created'] %> </td>
+  </tr>
+    <tr>
+    <th>Edited</th>
+    <td><%= @person['edited'] %> </td>
+  </tr>
+ </table>

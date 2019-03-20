@@ -1,0 +1,78 @@
+
+<h1 class="display-2" align="center"><%= @film['title'] %></h1>
+
+<table class="table table-bordered">
+  <tr>
+    <th>Episode</th>
+    <td><%= @film['episode_id'] %> </td>
+  </tr>
+  <tr>
+    <th>Opening Crawl</th>
+    <td><%= @film['opening_crawl'] %> </td>
+  </tr>
+    <tr>
+    <th>Director</th>
+    <td><%= @film['director'] %> </td>
+  </tr>
+    <tr>
+    <th>Producer</th>
+    <td><%= @film['producer'] %> </td>
+  </tr>
+    <tr>
+    <th>Release Date</th>
+    <td><%= @film['release_date'] %> </td>
+  </tr>
+      <tr>
+    <th>URL</th>
+    <td><%= @film['url'] %> </td>
+  </tr>
+      <tr>
+    <th>Created</th>
+    <td><%= @film['created'] %> </td>
+  </tr>
+    <tr>
+    <th>Edited</th>
+    <td><%= @film['edited'] %> </td>
+  </tr>
+    <tr>
+    <th>Starships</th>
+    <td>
+          <table class="table table-sm">
+ 			<% @starships.each do |star|%> 
+            <tr>
+        		<td><%= link_to star['name_star'], starship_path(:id => star['id']) %></td>
+            </tr>
+	        <% end %> 
+          </table>
+    </td>
+  </tr>
+
+  <tr>
+    <th>Characters</th>
+    <td>
+          <table class="table table-sm">
+            <% @characters.each do |char|%> 
+            <tr>
+              <td><%= link_to char['name_char'], person_path(:id => char['id']) %></td>
+            </tr>
+	        <% end %> 
+          </table>
+    </td>
+  </tr>
+
+  <tr>
+    <th>Planets</th>
+    <td>
+        <table class="table table-sm">
+            <% @planets.each do |plan|%> 
+            <tr>
+              <td><%= link_to plan['name_plan'], planet_path(:id => plan['id']) %></td>
+            </tr>
+	        <% end %> 
+          </table>
+    </td>
+  </tr>
+</table>
+
+
+   

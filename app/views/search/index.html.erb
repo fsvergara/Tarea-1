@@ -1,0 +1,59 @@
+
+<h1 class="display-6" align="center">Search Results</h1>
+
+<table class="table table-bordered">
+    <tr>
+    <th>Films</th>
+    <td>
+          <table class="table table-sm">
+ 			<% @films.each do |film|%> 
+            <tr>
+        		<td><%= link_to film['title'], film_path(:id => film['url'].split('/')[-1]) %></td>
+            </tr>
+	        <% end %> 
+          </table>
+    </td>
+  </tr>
+
+  <tr>
+    <th>Persons</th>
+    <td>
+          <table class="table table-sm">
+            <% @persons.each do |char|%> 
+            <tr>
+              <td><%= link_to char['name'], person_path(:id => char['url'].split('/')[-1]) %></td>
+            </tr>
+	        <% end %> 
+          </table>
+    </td>
+  </tr>
+    <tr>
+    <th>Starships</th>
+    <td>
+          <table class="table table-sm">
+ 			<% @starships.each do |star|%> 
+            <tr>
+        		<td><%= link_to star['name'], starship_path(:id => star['url'].split('/')[-1]) %></td>
+            </tr>
+	        <% end %> 
+          </table>
+    </td>
+  </tr>
+
+
+
+
+
+    <th>Planets</th>
+    <td>
+        <table class="table table-sm">
+            <% @planets.each do |plan|%> 
+            <tr>
+              <td><%= link_to plan['name'], planet_path(:id => plan['url'].split('/')[-1]) %></td>
+            </tr>
+	        <% end %> 
+          </table>
+    </td>
+
+
+</table>
